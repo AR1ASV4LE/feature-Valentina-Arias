@@ -31,10 +31,6 @@ router.get('/', (req, res) => {
   res.status(200).json(productos);
 });
 
-
-
-module.exports = router;
-
 // GET producto por ID
 router.get('/:id', (req, res) => {
   const producto = productos.find(p => p.id == req.params.id);
@@ -45,3 +41,6 @@ router.get('/:id', (req, res) => {
 
   res.status(200).json(producto);
 });
+
+// EXPORTAR SIEMPRE AL FINAL
+module.exports = router;
