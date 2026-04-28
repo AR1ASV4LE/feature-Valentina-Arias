@@ -3,11 +3,11 @@ const app = express();
 
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.send('API funcionando');
-});
+const productosRoutes = require('./routes/productos');
+
+app.use('/api/productos', productosRoutes);
 
 const PORT = 3000;
 app.listen(PORT, () => {
-  console.log(`Servidor en puerto ${PORT}`);
+  console.log(`Servidor corriendo en puerto ${PORT}`);
 });
